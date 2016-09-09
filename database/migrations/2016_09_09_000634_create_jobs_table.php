@@ -15,6 +15,9 @@ class CreateJobsTable extends Migration
     {
         Schema::create('homestead', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id')->index();
+            $table->string('title');
+            $table->text('description');
             $table->timestamps();
         });
     }
