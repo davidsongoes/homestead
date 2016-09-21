@@ -21,4 +21,9 @@ class Job extends Model
         'description',
         'expires_at',
     ];
+
+    public function user()
+    {
+        $this->belongsTo(User::class, 'user_id');
+    }
 }
