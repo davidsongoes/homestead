@@ -11,13 +11,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i<=27; $i++){
-            $user = new \Jobs\User();
-            $user->name = "User ($i)";
-            $user->email = "user{$i}@gmail.com";
-            $user->phone = mt_rand(100000000, 999999999);
-            $user->password = mt_rand(100000, 999999);
-            $user->save();
-        }
+      factory(\Jobs\User::class)->times(27)->create();
     }
 }
